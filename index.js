@@ -1,7 +1,6 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-
 const { dbConnection } = require('./db/config');
 require('dotenv').config();
 
@@ -26,8 +25,8 @@ app.use(express.json());
 app.use( '/api/auth', require('./routes/auth'));
 
 //Manejar demas rutas
-app.get('*',(req,res)=>{
-    res.sendFile( path.resolve(__dirname,'public/index.html'));
+app.get('*', (req,res)=>{
+    res.sendFile(path.resolve(__dirname,'public/index.html') );
 });
 
 
